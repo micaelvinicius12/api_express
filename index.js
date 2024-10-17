@@ -14,6 +14,10 @@ app.get("/dados",(req,res) => {
 app.get("/:nome/:idade/:endereco",(req,res) => {
     escreveDados(req.params.nome,req.params.idade,req.params.endereco);
 res.send("OS DADOS FORAM SALVOS !");});
+app.post("/dados/d",(req,res) => {
+    console.log(req.body);
+    res.send(String(req.body));
+});
 
 app.listen(port,()=>{
     console.log("servidor online");
