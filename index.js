@@ -2,6 +2,7 @@ const fs =  require("fs");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 8080;
 
 app.get("/",(req,res)=>{
      
@@ -15,7 +16,7 @@ app.post("/novo",(req,res)=>{
 });
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("servidor online");
 });
 
