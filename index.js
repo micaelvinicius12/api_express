@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 let dados = [];
+const port = process.env.PORT || 8080;
 
 app.get("/delete",(req,res) => {
     deletaDados();
@@ -14,7 +15,7 @@ app.get("/:nome/:idade/:endereco",(req,res) => {
     escreveDados(req.params.nome,req.params.idade,req.params.endereco);
 res.send("OS DADOS FORAM SALVOS !");});
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("servidor online");
 })
 
