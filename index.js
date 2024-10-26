@@ -8,8 +8,8 @@ app.get("/",(req,res)=>{
      
 
 });
-app.use(bodyParser.json());
-
+//app.use(bodyParser.json());
+app.use(express.json());
 app.post("/novo",(req,res)=>{
      console.log(req.body);
      res.send(req.body)
